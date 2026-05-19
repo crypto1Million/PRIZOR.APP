@@ -1,0 +1,46 @@
+from sqlalchemy import Column, Integer, String, DateTime, Boolean
+from backend.database import Base
+from datetime import datetime
+
+class User(Base):
+    __tablename__ = "users"
+
+    id = Column(Integer, primary_key=True, index=True)
+    username = Column(String, unique=True, index=True)
+    email = Column(String, unique=True, index=True)
+    password = Column(String)
+    age = Column(Integer)
+    location = Column(String)
+    gender = Column(String)
+    preference = Column(String)
+    likes_received = Column(Integer, default=0)
+    swipes_done = Column(Integer, default=0)
+    last_active = Column(DateTime)
+    elo_score = Column(Integer, default=1000)
+    last_swipe_time = Column(DateTime)
+    swipes_today = Column(Integer, default=0)
+    last_swipe_reset = Column(DateTime)
+    boost_active = Column(Boolean, default=False)
+    boost_expires_at = Column(DateTime)
+    boost_multiplier = Column(Integer, default=1)  # 1 = normal, 2x, 3x etc
+    last_seen = Column(DateTime, nullable=True)
+    is_online = Column(Boolean, default=False)
+    profile_image = Column(String, nullable=True)
+    activity_score = Column(Integer, default=0)
+    profile_completeness = Column(Integer, default=0)
+    discover_score = Column(Integer, default=0)
+    preferred_gender = Column(String, nullable=True)
+    preferred_age_min = Column(Integer, default=18)
+    preferred_age_max = Column(Integer, default=40)
+    interests = Column(String, nullable=True)
+    fcm_token = Column(String, nullable=True)
+    trust_score = Column(Integer, default=50)
+    is_verified = Column(Boolean, default=False)
+    warning_count = Column(Integer, default=0)
+    is_shadow_banned = Column(Boolean, default=False)
+    report_count = Column(Integer, default=0)
+    warning_count = Column(Integer, default=0)
+    trust_score = Column(Integer, default=100)
+    verification_token = Column(String, nullable=True)
+    reset_token = Column(String, nullable=True)
+    reset_token_expiry = Column(DateTime, nullable=True)
