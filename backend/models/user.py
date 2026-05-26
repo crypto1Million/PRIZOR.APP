@@ -44,3 +44,7 @@ class User(Base):
     verification_token = Column(String, nullable=True)
     reset_token = Column(String, nullable=True)
     reset_token_expiry = Column(DateTime, nullable=True)
+    pronouns = Column(String)
+    identity_tags = Column(String)
+    verified_identity = Column(Boolean, default=False)
+    

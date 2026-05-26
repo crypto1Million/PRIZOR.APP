@@ -1,0 +1,1 @@
+@router.post("/wallet/connect")
