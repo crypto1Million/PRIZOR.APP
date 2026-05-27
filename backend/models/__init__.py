@@ -18,3 +18,6 @@ from .transaction import Transaction
 from .crypto_wallet import CryptoWallet
 from .match_insight import MatchInsight
 from .ai_onboarding import AIOnboarding
+from .ai_profile import AIProfile
+from .subscription_tier import SubscriptionTier
+from .community import Community

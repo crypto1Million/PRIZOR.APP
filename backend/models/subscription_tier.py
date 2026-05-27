@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Float, ForeignKey
+from sqlalchemy import Column, Integer, String, Float
 from backend.database import Base
 
 class SubscriptionTier(Base):
@@ -8,7 +8,7 @@ class SubscriptionTier(Base):
 
     creator_id = Column(Integer, ForeignKey("users.id"))
 
-    name = Column(String)
+    name = Column(String, nullable=False)
 
     monthly_price = Column(Float)
 

@@ -1,8 +1,4 @@
 backend/firebase_key.json
-.env
-.env.local
-node_modules/
 __pycache__/
 *.pyc
-*.pyo
-venv/
+.env
