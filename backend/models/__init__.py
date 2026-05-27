@@ -16,4 +16,5 @@ from .creator_post import CreatorPost
 from .wallet import Wallet
 from .transaction import Transaction
 from .crypto_wallet import CryptoWallet
-
+from .match_insight import MatchInsight
+from .ai_onboarding import AIOnboarding

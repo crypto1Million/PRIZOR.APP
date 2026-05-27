@@ -30,3 +30,34 @@ def get_matches(
     ).all()
 
     return matches
+
+@router.get("/matches/{match_user_id}/insights")
+
+def get_match_insights(
+    match_user_id: int,
+    user_id: str = Depends(get_current_user),
+    db: Session = Depends(get_db)
+):
+    match_user = db.query(models.User).filter(
+        models.User.id == match_user_id
+    ).first()
+
+    if not match_user:
+        return {"error": "User not found"}
+
+    insights = generate_match_insight(
+        current_user,
+        match_user
+    )
+
+    score = calculate_compatibility_score(
+        current_user,
+        match_user
+    )
+
+    return {
+        "compatibility_score": score,
+        "insights": insights
+    }
+
+
