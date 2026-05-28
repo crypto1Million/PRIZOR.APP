@@ -1,4 +1,22 @@
-from sqlalchemy import Column, Integer, String, Float
+from sqlalchemy import (
+    Column,
+    Integer,
+    String,
+    ForeignKey,
+    Float,
+    DateTime,
+    Boolean,
+    Text,
+    Table,
+    UniqueConstraint,
+    Index,
+    func,
+    Enum,
+    ARRAY,
+    JSON,
+)
+
+from sqlalchemy.orm import relationship
 from backend.database import Base
 
 class SubscriptionTier(Base):
@@ -12,4 +30,4 @@ class SubscriptionTier(Base):
 
     monthly_price = Column(Float)
 
-    perks = Column(String)
+    perks = Column(JSON)
