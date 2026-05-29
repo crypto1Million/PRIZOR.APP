@@ -119,11 +119,12 @@ async def websocket_endpoint(websocket: WebSocket, user_id: int):
 
             if is_blocked:
 
-               await websocket.send_json({
+                await websocket.send_json({
                    "error": "User unavailable"
                 })
 
-                continue
+                return
+
 
             elif data.get("type") == "seen":
 
@@ -166,7 +167,7 @@ async def websocket_endpoint(websocket: WebSocket, user_id: int):
                     await manager.send_personal(receiver_id, {
                         "type": "stop_typing",
                         "from": user_id
-                 })
+                })
 
 
             # ==============================

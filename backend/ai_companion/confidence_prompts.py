@@ -115,6 +115,24 @@ class ConfidencePrompts:
 
         return self._confidence_prompt()
 
+    def generate_confidence_prompt(self):
+
+        prompts = [
+
+            "You deserve connections where you feel respected and valued.",
+
+            "Confidence grows when you stop shrinking yourself for others.",
+
+            "Your identity is valid and worthy of healthy relationships.",
+
+            "Healthy relationships begin with authenticity.",
+
+            "You do not need to become someone else to be appreciated."
+
+        ]
+
+        return random.choice(prompts)
+
     # =================================================
     # Internal generators
     # =================================================
@@ -127,24 +145,6 @@ class ConfidencePrompts:
 
     def _daily_prompt(self) -> str:
         return random.choice(DAILY_ENCOURAGEMENT_PROMPTS)
-
-    def generate_confidence_prompt():
-
-    prompts = [
-
-        "You deserve connections where you feel respected and valued.",
-
-        "Confidence grows when you stop shrinking yourself for others.",
-
-        "Your identity is valid and worthy of healthy relationships.",
-
-        "Good conversations start with authenticity, not perfection.",
-
-        "You do not need to change who you are to deserve attention."
-
-    ]
-
-    return prompts    
 
 
 # =====================================================

@@ -88,7 +88,7 @@ def discover_users(
 
         models.User.age >= current.preferred_age_min,
 
-        models.User.age <= current.preferred_age_max
+        models.User.age <= current.preferred_age_max,
 
         ~models.User.id.in_(blocked_ids),
 

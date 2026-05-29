@@ -197,7 +197,7 @@ def swipe(
 
         if target_user.fcm_token:
 
-        send_push_notification(
+         send_push_notification(
            target_user.fcm_token,
            "New Match ❤️",
            f"You matched with {current.username}"
