@@ -21,3 +21,6 @@ from .ai_onboarding import AIOnboarding
 from .ai_profile import AIProfile
 from .subscription_tier import SubscriptionTier
 from .community import Community
+from .ai_onboarding import AIOnboarding
+from .ai_profile import AIProfile
+from .match_insight import MatchInsight
