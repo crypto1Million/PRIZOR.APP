@@ -1,4 +1,5 @@
 from sqlalchemy import Column, Integer, String, DateTime, Boolean
+from sqlalchemy.orm import relationship
 from backend.database import Base
 from datetime import datetime
 
@@ -47,4 +48,67 @@ class User(Base):
     pronouns = Column(String)
     identity_tags = Column(String)
     verified_identity = Column(Boolean, default=False)
-    
+    creator_memberships = relationship(
+        "CreatorMembership",
+        back_populates="creator"
+    )
+
+    creator_badges = relationship(
+        "CreatorBadge",
+        back_populates="creator"
+    )
+
+    creator_rewards = relationship(
+        "CreatorReward",
+        back_populates="creator"
+    )
+
+    creator_xp = relationship(
+        "CreatorXP",
+        back_populates="creator",
+        uselist=False
+    )
+
+    creator_achievements = relationship(
+        "CreatorAchievement",
+        back_populates="creator"
+    )
+
+    creator_analytics_events = relationship(
+    "CreatorAnalyticsEvent",
+    back_populates="creator"
+    )
+
+    creator_engagement = relationship(
+    "CreatorEngagement",
+    back_populates="creator",
+    uselist=False
+    )
+
+    creator_metric_snapshots = relationship(
+        "CreatorMetricsSnapshot",
+        back_populates="creator"
+    )
+
+    creator_revenue_analytics = relationship(
+        "CreatorRevenueAnalytics",
+        back_populates="creator"
+    )
+
+    revenue_transactions = relationship("RevenueTransaction")
+    revenue_streams = relationship("RevenueStream")
+    revenue_reports = relationship("RevenueReport")
+    revenue_payouts = relationship("RevenuePayout")
+    revenue_snapshots = relationship("RevenueSnapshot")
+
+    commissions = relationship("Commission")
+
+    affiliate_commissions = relationship("AffiliateCommission")
+
+    referral_commissions = relationship(
+       "ReferralCommission",
+       foreign_keys="ReferralCommission.creator_id"
+    )
+
+    commission_reports = relationship("CommissionReport")
+

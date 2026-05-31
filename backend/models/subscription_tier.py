@@ -31,3 +31,16 @@ class SubscriptionTier(Base):
     monthly_price = Column(Float)
 
     perks = Column(JSON)
+
+    benefits = relationship(
+    "SubscriptionBenefit"
+    )
+
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+    updated_at = Column(DateTime(timezone=True), onupdate=func.now())
+    creator = relationship(
+        "User",
+        back_populates="subscription_tiers"
+    )
+
+    
