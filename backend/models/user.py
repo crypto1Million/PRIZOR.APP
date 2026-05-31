@@ -112,3 +112,18 @@ class User(Base):
 
     commission_reports = relationship("CommissionReport")
 
+    video_calls_started = relationship(
+        "VideoCall",
+        foreign_keys="VideoCall.caller_id"
+    )
+
+    video_calls_received = relationship(
+        "VideoCall",
+        foreign_keys="VideoCall.receiver_id"
+    )
+
+    call_reports_filed = relationship(
+        "CallReport",
+        foreign_keys="CallReport.reporter_id"
+    )
+
