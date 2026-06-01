@@ -111,3 +111,10 @@ from .event_sponsor import EventSponsor
 from .event_chat_message import EventChatMessage
 from .event_checkin import EventCheckin
 from .event_analytics import EventAnalytics
+from .agency import Agency
+from .agency_member import AgencyMember
+from .agency_creator import AgencyCreator
+from .agency_contract import AgencyContract
+from .agency_payout import AgencyPayout
+from .agency_commission import AgencyCommission
+from .agency_brand_deal import AgencyBrandDeal
