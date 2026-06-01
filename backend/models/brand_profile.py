@@ -6,9 +6,14 @@ from backend.database import Base
 class BrandProfile(Base):
     __tablename__ = "brand_profiles"
 
-    id = Column(Integer, primary_key=True, index=True)
+    id = Column(Integer, primary_key=True)
 
-    name = Column(String, nullable=False)
+    user_id = Column(
+        Integer,
+        ForeignKey("users.id")
+    )
+
+    name = Column(String)
 
     slug = Column(String, unique=True, index=True)
 

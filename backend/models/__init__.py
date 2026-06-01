@@ -118,3 +118,11 @@ from .agency_contract import AgencyContract
 from .agency_payout import AgencyPayout
 from .agency_commission import AgencyCommission
 from .agency_brand_deal import AgencyBrandDeal
+from .commerce_ai_profile import CommerceAIProfile
+from .purchase_history import PurchaseHistory
+from .recommendation_event import RecommendationEvent
+from .shopping_session import ShoppingSession
+from .personalization_vector import PersonalizationVector
+from .product_affinity import ProductAffinity
+from .creator_affinity import CreatorAffinity
+from .event_affinity import EventAffinity
