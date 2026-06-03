@@ -2,7 +2,7 @@ from sqlalchemy import Column, Integer, ForeignKey
 from backend.database import Base
 
 class UserBehavior(Base):
-    __tablename__ = "user_behavior"   # ✅ THIS LINE FIXES YOUR ERROR
+    __tablename__ = "user_behavior" 
 
     id = Column(Integer, primary_key=True, index=True)
     user_id = Column(Integer, ForeignKey("users.id"))
