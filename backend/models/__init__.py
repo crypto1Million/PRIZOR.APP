@@ -139,3 +139,6 @@ from .enterprise_api_key import EnterpriseAPIKey
 from .enterprise_audit_log import EnterpriseAuditLog
 from .enterprise_integration import EnterpriseIntegration
 from .enterprise_support_ticket import EnterpriseSupportTicket
+from .media import Media
+from .post import Post
+from .video import Video

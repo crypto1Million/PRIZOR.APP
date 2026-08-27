@@ -2,6 +2,7 @@ from sqlalchemy import Column, Integer, String, DateTime, Boolean
 from sqlalchemy.orm import relationship
 from backend.database import Base
 from datetime import datetime
+from sqlalchemy.orm import relationship
 
 class User(Base):
     __tablename__ = "users"
@@ -127,3 +128,18 @@ class User(Base):
         foreign_keys="CallReport.reporter_id"
     )
 
+    followers = relationship(
+        "Follow",
+        foreign_keys="Follow.following_id"
+    )
+
+    following = relationship(
+        "Follow",
+        foreign_keys="Follow.follower_id"
+    )
+
+    achievements = relationship(
+        "UserAchievement",
+        back_populates="user",
+        cascade="all, delete-orphan"
+    )

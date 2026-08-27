@@ -14,6 +14,15 @@ from fastapi.responses import JSONResponse
 from backend.routes.discovery import router as discovery_router 
 from backend.routes import discovery 
 from backend.routes import password_reset
+from backend.routes import (
+    profile,
+    followers,
+    creator_dashboard,
+    achievements,
+    communities,
+    events,
+    ai_insights
+)
 import models 
 
 Base.metadata.create_all(bind=engine)
@@ -45,3 +54,11 @@ app.add_middleware(SlowAPIMiddleware)
 @app.get("/")
 def root():
     return {"status": "upgraded running"}
+
+app.include_router(profile.router)
+app.include_router(followers.router)
+app.include_router(creator_dashboard.router)
+app.include_router(achievements.router)
+app.include_router(communities.router)
+app.include_router(events.router)
+app.include_router(ai_insights.router)    
